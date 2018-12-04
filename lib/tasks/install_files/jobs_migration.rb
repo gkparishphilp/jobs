@@ -27,7 +27,7 @@ class JobsMigration < ActiveRecord::Migration[5.1]
 		end
 
 
-		create_table :jobs_tasks, force: true do |t| # cache this model's attributes, and have it expire after session is dead for X minutes (TTL)
+		create_table :jobs_tasks, force: true do |t| 
 			t.references 	:project
 			t.references 	:created_by
 			t.references 	:assigned_to
@@ -67,3 +67,6 @@ class JobsMigration < ActiveRecord::Migration[5.1]
 
 	end
 end
+
+
+
