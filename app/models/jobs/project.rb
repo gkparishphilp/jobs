@@ -1,5 +1,5 @@
 module Jobs
-	class Project < ApplicationRecord
+	class Project < Task
 
 		belongs_to 	:lead, class_name: 'User'
 

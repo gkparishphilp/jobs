@@ -15,20 +15,10 @@ class JobsMigration < ActiveRecord::Migration[5.1]
 
 		end
 
-		create_table :jobs_projects, force: true do |t|
-			t.references	:lead
-			t.string 		:title
-			t.text 			:description
-			t.integer		:priority
-			t.integer		:status, default: 1
-			t.hstore 		:properties
-
-			t.timestamps
-		end
-
 
 		create_table :jobs_tasks, force: true do |t| 
 			t.references 	:project
+			t.references	:lead
 			t.references 	:created_by
 			t.references 	:assigned_to
 			
